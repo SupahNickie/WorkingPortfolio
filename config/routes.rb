@@ -3,6 +3,8 @@ Portfolio::Application.routes.draw do
 
   resources :projects
 
+  resources :testimonials
+
   devise_for :users
 
   root :to => 'home#home'
