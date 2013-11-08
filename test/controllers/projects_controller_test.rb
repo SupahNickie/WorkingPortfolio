@@ -1,7 +1,7 @@
 require "test_helper"
 
-describe BlogsController do
-  fixtures :blogs
+describe ProjectsController do
+  fixtures :projects
 
   it "rejects site visitors if they attempt to render the new blog command" do
     get :new
@@ -9,22 +9,23 @@ describe BlogsController do
   end
 
   it "rejects site visitors if they attempt to post a new blog" do
-    post :create, blog: {title: "test", body: "testing"}
+    post :create, project: {title: "test", technologies_used: "none", body: "testing"}
     assert_redirected_to({controller: "home", action: "home"})
   end
 
   it "rejects site visitors if they attempt to render the edit blog command" do
-    get :edit, :id => blogs(:blog1)
+    get :edit, :id => projects(:project1)
     assert_redirected_to({controller: "home", action: "home"})
   end
 
   it "rejects site visitors if they attempt to update a blog" do
-    put :update, :id => blogs(:blog1)
+    put :update, :id => projects(:project1)
     assert_redirected_to({controller: "home", action: "home"})
   end
 
   it "rejects site visitors if they attempt to delete a blog" do
-    delete :destroy, :id => blogs(:blog1)
+    delete :destroy, :id => projects(:project1)
     assert_redirected_to({controller: "home", action: "home"})
   end
+
 end

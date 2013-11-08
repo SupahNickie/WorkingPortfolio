@@ -6,6 +6,6 @@ project1:
 
 project2:
   id: 902
-  title: Test project 2
+  title: Different thing
   technologies_used: More techy things
-  body: Test body 2
+  body: Another content post
