@@ -1,0 +1,11 @@
+project1:
+  id: 901
+  title: Test project
+  technologies_used: Tech stuff
+  body: Test body
+
+project2:
+  id: 902
+  title: Test project 2
+  technologies_used: More techy things
+  body: Test body 2

@@ -1,0 +1,9 @@
+blog1:
+  id: 901
+  title: Test blog
+  body: Test post
+
+blog2:
+  id: 902
+  title: Test blog 2
+  body: Test post 2
