@@ -1,28 +1,28 @@
 class ProjectPolicy
-  attr_reader :admin, :project
+  attr_reader :user, :project
 
-  def initialize(admin, project)
-    @admin = admin
+  def initialize(user, project)
+    @user = user
     @project = project
   end
 
   def new?
-    admin.present?
+    user.present?
   end
 
   def create?
-    admin.present?
+    user.present?
   end
 
   def edit?
-    admin.present?
+    user.present?
   end
 
   def update?
-    admin.present?
+    user.present?
   end
 
   def destroy?
-    admin.present?
+    user.present?
   end
 end

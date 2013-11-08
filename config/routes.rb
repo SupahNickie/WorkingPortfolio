@@ -3,9 +3,9 @@ Portfolio::Application.routes.draw do
 
   resources :projects
 
-  devise_for :admins
+  devise_for :users
 
-  root :to => "home#home"
+  root :to => 'home#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

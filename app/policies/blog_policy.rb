@@ -1,28 +1,28 @@
 class BlogPolicy
-  attr_reader :admin, :blog
+  attr_reader :user, :blog
 
-  def initialize(admin, blog)
-    @admin = admin
+  def initialize(user, blog)
+    @user = user
     @blog = blog
   end
 
   def new?
-    admin.present?
+    user.present?
   end
 
   def create?
-    admin.present?
+    user.present?
   end
 
   def edit?
-    admin.present?
+    user.present?
   end
 
   def update?
-    admin.present?
+    user.present?
   end
 
   def destroy?
-    admin.present?
+    user.present?
   end
 end
