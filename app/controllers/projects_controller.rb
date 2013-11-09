@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = Project.create(project_params)
     authorize @project
 
     respond_to do |format|
@@ -61,6 +61,7 @@ class ProjectsController < ApplicationController
   def destroy
     authorize @project
 
+    @project.photo = nil
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url }
@@ -76,6 +77,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :technologies_used, :body)
+      params.require(:project).permit(:title, :technologies_used, :body, :photo)
     end
 end

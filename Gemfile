@@ -6,6 +6,7 @@ gem 'figaro'
 gem 'bootstrap-sass-rails'
 gem 'devise'
 gem 'turbolinks'
+gem 'paperclip'
 
 group :development, :test do
   gem "minitest-rails"

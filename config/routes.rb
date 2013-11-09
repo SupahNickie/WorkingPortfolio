@@ -3,7 +3,7 @@ Portfolio::Application.routes.draw do
 
   resources :projects
 
-  resources :testimonials
+  get '/testimonials', to: 'testimonials#index'
 
   devise_for :users
 
