@@ -15,7 +15,8 @@
   <%= @project.body %>
 </p>
 
-<%= image_tag @project.photo.url(:full) %>
+<%= image_tag @project.photo.url(:full) %><br><br>
+<%= audio_tag(@project.mp3.url, controls: true) %><br><br>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

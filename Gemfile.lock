@@ -197,6 +197,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  mime-types
   minitest-focus
   minitest-rails
   minitest-rails-capybara

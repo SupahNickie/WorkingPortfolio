@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109191610) do
+ActiveRecord::Schema.define(version: 20131110004344) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20131109191610) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "mp3_updated_at"
   end
 
   create_table "users", force: true do |t|

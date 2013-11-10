@@ -7,6 +7,7 @@ gem 'bootstrap-sass-rails'
 gem 'devise'
 gem 'turbolinks'
 gem 'paperclip'
+gem 'mime-types'
 
 group :development, :test do
   gem "minitest-rails"
