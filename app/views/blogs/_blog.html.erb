@@ -1,0 +1,9 @@
+<tr id="<%= dom_id(blog) %>">
+  <td><%= blog.title %></td>
+  <td><%= blog.body %></td>
+  <td><%= link_to 'Show', blog %></td>
+  <% if policy(blog).edit? %>
+    <td><%= link_to 'Edit', edit_blog_path(blog), remote: true, id: blog.id %></td>
+    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+  <% end %>
+</tr>
