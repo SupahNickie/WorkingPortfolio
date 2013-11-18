@@ -8,13 +8,13 @@ gem 'devise'
 gem 'turbolinks'
 gem 'paperclip'
 gem 'mime-types'
-gem 'capybara-webkit'
 gem 'aws-sdk'
 
 group :development, :test do
   gem "minitest-rails"
   gem 'pry-rails'
   gem "faker"
+  gem 'capybara-webkit'
   gem "sqlite3"
   gem "launchy"
   gem "turn"
