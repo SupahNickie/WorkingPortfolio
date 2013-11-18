@@ -1,3 +1,5 @@
+ruby '2.0.0'
+
 source 'https://rubygems.org'
 
 gem 'simplecov', :require => false, :group => :test
@@ -27,7 +29,7 @@ group :test do
 end
 
 group :production do
-  gem 'rails_12factor'
+  #gem 'rails_12factor'
   gem 'pg'
 end
 
@@ -60,7 +62,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-ruby '2.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
