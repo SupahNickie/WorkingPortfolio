@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'paperclip'
 gem 'mime-types'
 gem 'capybara-webkit'
-gem 'aws-s3'
+gem 'aws-sdk'
 
 group :development, :test do
   gem "minitest-rails"
