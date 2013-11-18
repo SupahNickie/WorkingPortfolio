@@ -1,6 +1,5 @@
-ruby '2.0.0'
-
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'simplecov', :require => false, :group => :test
 gem 'pundit'
@@ -29,7 +28,7 @@ group :test do
 end
 
 group :production do
-  #gem 'rails_12factor'
+  gem 'rails_12factor'
   gem 'pg'
 end
 
