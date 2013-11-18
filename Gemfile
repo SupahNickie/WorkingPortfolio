@@ -8,6 +8,8 @@ gem 'devise'
 gem 'turbolinks'
 gem 'paperclip'
 gem 'mime-types'
+gem 'capybara-webkit'
+gem 'aws-s3'
 
 group :development, :test do
   gem "minitest-rails"
@@ -16,6 +18,7 @@ group :development, :test do
   gem "sqlite3"
   gem "launchy"
   gem "turn"
+  gem "database_cleaner"
 end
 
 group :test do

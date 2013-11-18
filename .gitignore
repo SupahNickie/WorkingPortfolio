@@ -23,3 +23,6 @@
 
 # Ignore seeds
 /db/seeds.rb
+
+# Ignore S3 Credentials
+/config/s3.yml

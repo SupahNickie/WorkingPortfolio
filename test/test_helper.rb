@@ -7,13 +7,25 @@ require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/focus"
-
-# To add Capybara feature tests add `gem "minitest-rails-capybara"`
-# to the test group in the Gemfile and uncomment the following:
-# require "minitest/rails/capybara"
+require "database_cleaner"
+require "capybara/webkit"
+Capybara.javascript_driver = :webkit
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
+
+DatabaseCleaner.strategy = :truncation
+
+class MiniTest::Spec
+  before :each do
+    DatabaseCleaner.start
+  end
+
+  after :each do
+    DatabaseCleaner.clean
+  end
+end
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
@@ -40,3 +52,4 @@ def sign_in_user
 end
 
 Turn.config.format = :outline
+
