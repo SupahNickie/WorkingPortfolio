@@ -7,24 +7,25 @@ require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/focus"
-require "database_cleaner"
-require "capybara/webkit"
-Capybara.javascript_driver = :webkit
+
+# require "database_cleaner"
+# require "capybara/webkit"
+# Capybara.javascript_driver = :webkit
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
-DatabaseCleaner.strategy = :truncation
-
-class MiniTest::Spec
-  before :each do
-    DatabaseCleaner.start
-  end
-
-  after :each do
-    DatabaseCleaner.clean
-  end
-end
+# DatabaseCleaner.strategy = :truncation
+#
+# class MiniTest::Spec
+#   before :each do
+#     DatabaseCleaner.start
+#   end
+#
+#   after :each do
+#     DatabaseCleaner.clean
+#   end
+# end
 
 
 class ActiveSupport::TestCase

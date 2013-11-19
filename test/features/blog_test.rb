@@ -29,7 +29,7 @@ end
 # HAPPY PATH FOR THE ADMIN
 
 feature "a blog post can be CRUD'd by the site admin" do
-  scenario "the admin can create a new blog post", js: true do
+  scenario "the admin can create a new blog post" do
     # Given the admin is signed in
     sign_in_user
 
