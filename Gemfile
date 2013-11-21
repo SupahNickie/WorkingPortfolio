@@ -11,12 +11,13 @@ gem 'paperclip'
 gem 'mime-types'
 gem 'aws-sdk'
 
+gem 'pg'
+
 group :development, :test do
   gem "minitest-rails"
   gem 'pry-rails'
   gem "faker"
   gem 'capybara-webkit'
-  gem "sqlite3"
   gem "launchy"
   gem "turn"
   gem "database_cleaner"
