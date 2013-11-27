@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'paperclip'
 gem 'mime-types'
 gem 'aws-sdk'
+gem 'postmark'
 
 gem 'pg'
 
@@ -21,6 +22,7 @@ group :development, :test do
   gem "launchy"
   gem "turn"
   gem "database_cleaner"
+  gem 'letter_opener'
 end
 
 group :test do
