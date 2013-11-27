@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'paperclip'
 gem 'mime-types'
 gem 'aws-sdk'
-gem 'postmark'
+gem 'postmark-rails'
 
 gem 'pg'
 
