@@ -1,22 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @project.title %></h2><br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div id="project_text">
+  <p>
+    <strong>Technologies used:</strong>
+    <%= @project.technologies_used %>
+  </p>
 
-<p>
-  <strong>Technologies used:</strong>
-  <%= @project.technologies_used %>
-</p>
+  <p>
+    <strong>About this project</strong><br>
+    <%= @project.body %>
+  </p>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @project.body %>
-</p>
+<div id="project_content">
+  <%= image_tag @project.photo.url(:full) %><br><br>
+  <% if @project.mp3? %>
+    <%= audio_tag(@project.mp3.url, controls: true) %><br><br>
+  <% end %>
+</div>
 
-<%= image_tag @project.photo.url(:full) %><br><br>
-<%= audio_tag(@project.mp3.url, controls: true) %><br><br>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div id="project_controls">
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>

@@ -19,7 +19,9 @@
         <td><%= project.technologies_used %></td>
         <td><%= project.body %></td>
         <td><%= image_tag project.photo.url(:thumb) %></td>
+        <% if project.mp3? %>
         <td><%= audio_tag(project.mp3.url, controls: true) %></td>
+        <% end %>
         <td><%= link_to 'Show', project %></td>
         <% if policy(project).edit? %>
           <td><%= link_to 'Edit', edit_project_path(project) %></td>
