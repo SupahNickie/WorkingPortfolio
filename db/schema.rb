@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127184544) do
+ActiveRecord::Schema.define(version: 20131128011352) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20131127184544) do
   create_table "messages", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "message"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "projects", force: true do |t|
     t.string   "title"
-    t.string   "technologies_used"
-    t.string   "body"
+    t.text     "technologies_used"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"

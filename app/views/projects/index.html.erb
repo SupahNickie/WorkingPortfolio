@@ -1,36 +1,19 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Technologies used</th>
-      <th>Body</th>
-      <th>Preview</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr id="<%= dom_id(project) %>">
-        <td><%= project.title %></td>
-        <td><%= project.technologies_used %></td>
-        <td><%= project.body %></td>
-        <td><%= image_tag project.photo.url(:thumb) %></td>
-        <% if project.mp3? %>
-        <td><%= audio_tag(project.mp3.url, controls: true) %></td>
-        <% end %>
-        <td><%= link_to 'Show', project %></td>
-        <% if policy(project).edit? %>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+<% @projects.each do |project| %>
+  <div class="project_index" id="<%= dom_id(project) %>">
+    <td><%= image_tag project.photo.url(:thumb) %></td>
+    <td id="project_name"><%= project.title %></td><br>
+    <% if project.mp3? %>
+    <td><%= audio_tag(project.mp3.url, controls: true) %></td>
     <% end %>
-  </tbody>
-</table>
+    <td><%= link_to 'Show', project %></td>
+    <% if policy(project).edit? %>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
 
 <br>
 
