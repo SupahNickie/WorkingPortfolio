@@ -2,14 +2,18 @@
 
 <div id="project_text">
   <p>
-    <strong>Technologies used:</strong>
+    <strong>Technologies Used:</strong>
     <%= @project.technologies_used %>
   </p>
 
   <p>
-    <strong>About this project</strong><br>
+    <strong>About this Project</strong><br>
     <%= @project.body %>
   </p>
+
+  <p>
+    <strong><%= link_to "Link to Project", "http://#{@project.link}" %></strong>
+  </p><br>
 </div>
 
 <div id="project_content">
