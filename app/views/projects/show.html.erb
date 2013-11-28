@@ -20,6 +20,8 @@
 </div>
 
 <div id="project_controls">
-  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <% if policy(@project).update? %>
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+  <% end %>
   <%= link_to 'Back', projects_path %>
 </div>
