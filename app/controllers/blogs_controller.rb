@@ -33,7 +33,6 @@ class BlogsController < ApplicationController
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render action: 'show', status: :created, location: @blog }
-        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
@@ -50,7 +49,6 @@ class BlogsController < ApplicationController
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
-        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
@@ -67,7 +65,6 @@ class BlogsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to blogs_url }
       format.json { head :no_content }
-      format.js
     end
   end
 

@@ -11,7 +11,6 @@ gem 'paperclip'
 gem 'mime-types'
 gem 'aws-sdk'
 gem 'postmark-rails'
-
 gem 'pg'
 
 group :development, :test do

@@ -8,7 +8,16 @@
   <%= @blog.body %>
 </p>
 
-<% if policy(@blog).update? %>
-  <%= link_to 'Edit', edit_blog_path(@blog) %> |
-<% end %>
-<%= link_to 'Back', blogs_path %>
+<div id="project_content">
+  <% @blog.photos.each do |photo| %>
+    <%= image_tag photo.photo.url(:full) %><br><br>
+  <% end %>
+</div>
+
+<div id="project_controls">
+  <% if policy(@blog).update? %>
+    <%= link_to 'Add Photo', new_blog_photo_path(@blog) %> |
+    <%= link_to 'Edit', edit_blog_path(@blog) %> |
+  <% end %>
+  <%= link_to 'Back', blogs_path %>
+</div>

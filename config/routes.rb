@@ -1,9 +1,14 @@
 Portfolio::Application.routes.draw do
+
   resources :messages, only: [:new, :create]
 
-  # resources :blogs
+  resources :blogs do
+    resources :photos
+  end
 
-  resources :projects
+  resources :projects do
+    resources :photos
+  end
 
   get '/testimonials', to: 'testimonials#index'
 

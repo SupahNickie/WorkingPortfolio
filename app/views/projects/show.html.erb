@@ -17,14 +17,14 @@
 </div>
 
 <div id="project_content">
-  <%= image_tag @project.photo.url(:full) %><br><br>
-  <% if @project.mp3? %>
-    <%= audio_tag(@project.mp3.url, controls: true) %><br><br>
+  <% @project.photos.each do |photo| %>
+    <%= image_tag photo.photo.url(:full) %><br><br>
   <% end %>
 </div>
 
 <div id="project_controls">
   <% if policy(@project).update? %>
+    <%= link_to 'Add Photo', new_project_photo_path(@project) %> |
     <%= link_to 'Edit', edit_project_path(@project) %> |
   <% end %>
   <%= link_to 'Back', projects_path %>

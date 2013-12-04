@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128014523) do
+ActiveRecord::Schema.define(version: 20131204005639) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -28,20 +28,23 @@ ActiveRecord::Schema.define(version: 20131128014523) do
     t.datetime "updated_at"
   end
 
+  create_table "photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "projects", force: true do |t|
     t.string   "title"
     t.text     "technologies_used"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.string   "mp3_file_name"
-    t.string   "mp3_content_type"
-    t.integer  "mp3_file_size"
-    t.datetime "mp3_updated_at"
     t.string   "link"
   end
 

@@ -1,23 +1,22 @@
-<h1>Listing blogs</h1>
+<h1>Listing blogs</h1><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% @blogs.each do |blog| %>
+    <div class="project_index" id="<%= dom_id(blog) %>">
+      <% if blog.photos.any? %>
+        <td><%= link_to image_tag(blog.photos.first.photo.url(:thumb)), blog %></td><br>
+      <% else %>
+        <td><%= link_to 'Show Blog', blog %></td>
+      <% end %>
+      <td id="project_name"><p><%= blog.title %></p></td>
+      <% if policy(blog).edit? %>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </div>
+  <% end %>
 
-  <tbody>
-    <%= render @blogs %>
-  </tbody>
-</table>
-
-<br>
-
-<% if policy(Blog).create? %>
-  <%= link_to 'New Blog', new_blog_path, remote: true, id: "new_link" %>
-<% end %>
+<div id="new_project">
+  <% if policy(Blog).create? %>
+    <%= link_to 'New Blog', new_blog_path %>
+  <% end %>
+</div>
