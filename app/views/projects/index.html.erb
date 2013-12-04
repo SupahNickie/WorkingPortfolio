@@ -2,16 +2,20 @@
 
 <% @projects.each do |project| %>
   <div class="project_index" id="<%= dom_id(project) %>">
-    <% if project.photos.any? %>
-      <td><%= link_to image_tag(project.photos.first.photo.url(:thumb)), project %></td><br>
-    <% else %>
-      <td><%= link_to 'Show Project', project %><br>
-    <% end %>
-    <td id="project_name"><p><%= project.title %></p></td>
-    <% if policy(project).edit? %>
-      <td><%= link_to 'Edit', edit_project_path(project) %></td>
-      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+    <div class="project_pic">
+      <% if project.photos.any? %>
+        <%= link_to image_tag(project.photos.first.photo.url(:thumb)), project %><br>
+      <% end %>
+    </div>
+    <div class="project_text">
+      <p id="project_name"><%= project.title %></p>
+      <p id="project_subheading"><%= project.subheading %></p>
+      <p><%= link_to 'View It!', project %>
+      <% if policy(project).edit? %>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <br>
