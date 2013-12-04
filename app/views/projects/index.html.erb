@@ -4,7 +4,7 @@
   <div class="project_index" id="<%= dom_id(project) %>">
     <div class="project_pic">
       <% if project.photos.any? %>
-        <%= link_to image_tag(project.photos.first.photo.url(:thumb)), project %><br>
+        <%= link_to image_tag(project.photos.first.photo.url(:full)), project %><br>
       <% end %>
     </div>
     <div class="project_text">
