@@ -26,6 +26,7 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = @photoable.photos.new(photo_params)
+    authorize @photo
 
     respond_to do |format|
       if @photo.save
@@ -41,6 +42,7 @@ class PhotosController < ApplicationController
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
   def update
+    authorize @photo
     respond_to do |format|
       if @photo.update(photo_params)
         format.html { redirect_to @photoable, notice: 'Photo was successfully updated.' }
@@ -55,6 +57,8 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
+    authorize @photo
+
     @photo = @photoable.photos.find(params[:id])
     @photo.destroy
     respond_to do |format|
