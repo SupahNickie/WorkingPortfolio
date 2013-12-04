@@ -1,23 +1,25 @@
 <h1>Projects</h1><br>
 
-<% @projects.each do |project| %>
-  <div class="project_index" id="<%= dom_id(project) %>">
-    <div class="project_pic">
-      <% if project.photos.any? %>
-        <%= link_to image_tag(project.photos.first.photo.url(:full)), project %><br>
-      <% end %>
+<div class="project_index">
+  <% @projects.each do |project| %>
+    <div class="project_container" id="<%= dom_id(project) %>">
+      <div class="project_pic">
+        <% if project.photos.any? %>
+          <%= link_to image_tag(project.photos.first.photo.url(:full)), project %><br>
+        <% end %>
+      </div>
+      <div class="project_text">
+        <p id="project_name"><%= project.title %></p>
+        <p id="project_subheading"><%= project.subheading %></p>
+        <p><%= link_to 'View It!', project %>
+        <% if policy(project).edit? %>
+          <%= link_to 'Edit', edit_project_path(project) %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     </div>
-    <div class="project_text">
-      <p id="project_name"><%= project.title %></p>
-      <p id="project_subheading"><%= project.subheading %></p>
-      <p><%= link_to 'View It!', project %>
-      <% if policy(project).edit? %>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 <br>
 
 <div id="new_project">

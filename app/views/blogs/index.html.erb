@@ -1,7 +1,8 @@
 <h1>Blogs</h1><br>
 
+<div class="blog_index">
   <% @blogs.each do |blog| %>
-    <div class="blog_index" id="<%= dom_id(blog) %>">
+    <div class="blog_container" id="<%= dom_id(blog) %>">
       <div class="blog_pic">
         <% if blog.photos.any? %>
           <%= link_to image_tag(blog.photos.first.photo.url(:full)), blog %><br>
@@ -18,6 +19,8 @@
       </div>
     </div>
   <% end %>
+</div>
+<br>
 
 <div id="new_blog">
   <% if policy(Blog).create? %>
