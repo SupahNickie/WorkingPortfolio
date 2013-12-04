@@ -1,17 +1,21 @@
 <h1>Blogs</h1><br>
 
   <% @blogs.each do |blog| %>
-    <div class="project_index" id="<%= dom_id(blog) %>">
-      <% if blog.photos.any? %>
-        <td><%= link_to image_tag(blog.photos.first.photo.url(:thumb)), blog %></td><br>
-      <% else %>
-        <td><%= link_to 'Show Blog', blog %></td>
-      <% end %>
-      <td id="project_name"><p><%= blog.title %></p></td>
-      <% if policy(blog).edit? %>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+    <div class="blog_index" id="<%= dom_id(blog) %>">
+      <div class="blog_pic">
+        <% if blog.photos.any? %>
+          <%= link_to image_tag(blog.photos.first.photo.url(:thumb)), blog %><br>
+        <% end %>
+      </div>
+      <div class="blog_text">
+        <p id="blog_name"><%= blog.title %></p>
+        <p id="blog_subheading"><%= blog.subheading %></p>
+        <p><%= link_to 'Read It!', blog %>
+        <% if policy(blog).edit? %>
+          <%= link_to 'Edit', edit_blog_path(blog) %>
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 
