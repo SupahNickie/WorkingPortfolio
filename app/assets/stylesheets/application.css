@@ -13,3 +13,9 @@
  *= require scaffolds
  *= require_tree .
  */
+
+#carousel {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
