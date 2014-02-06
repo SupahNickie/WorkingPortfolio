@@ -1,77 +1,45 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
 
-gem 'simplecov', :require => false, :group => :test
-gem 'pundit'
-gem 'figaro'
-gem 'bootstrap-sass-rails'
-gem 'devise'
-gem 'turbolinks'
-gem 'paperclip'
-gem 'mime-types'
+ruby '2.0.0'
+gem 'rails', '4.0.0'
+
 gem 'aws-sdk'
+gem 'bootstrap-sass-rails'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
+gem 'figaro'
+gem 'jbuilder', '~> 1.2'
+gem 'jquery-rails'
+gem 'mime-types'
+gem 'paperclip'
 gem 'postmark-rails'
 gem 'pg'
+gem 'pundit'
+gem 'turbolinks'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'capybara-webkit'
+  gem "database_cleaner"
+  gem "faker"
+  gem "launchy"
+  gem 'letter_opener'
   gem "minitest-rails"
   gem 'pry-rails'
-  gem "faker"
-  gem 'capybara-webkit'
-  gem "launchy"
   gem "turn"
-  gem "database_cleaner"
-  gem 'letter_opener'
 end
 
-group :test do
-  gem "minitest-rails-capybara"
-  gem "minitest-focus"
+group :doc do
+  gem 'sdoc', require: false
 end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
 end
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :test do
+  gem "minitest-focus"
+  gem "minitest-rails-capybara"
+  gem 'simplecov', :require => false
 end
-
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
