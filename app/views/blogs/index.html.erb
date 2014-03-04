@@ -11,7 +11,7 @@
       <div class="blog_text">
         <p id="blog_name"><%= blog.title %></p>
         <p id="blog_subheading"><%= blog.subheading %></p>
-        <p><%= link_to 'Read It!', blog %>
+        <p id="blog_subheading"><%= link_to 'Read It!', blog %>
         <% if policy(blog).edit? %>
           <%= link_to 'Edit', edit_blog_path(blog) %>
           <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>

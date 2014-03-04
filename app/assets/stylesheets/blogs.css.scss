@@ -24,7 +24,6 @@
 .blog_text {
   width: 200px;
   text-align: center;
-  margin: 0 auto;
   font-size: 20px;
   display: inline;
 }
@@ -40,4 +39,10 @@
 
 #blog_controls {
   clear: both;
+}
+
+#blog_subheading {
+  width: 300px;
+  float: right;
+  margin-right: 70px;
 }
