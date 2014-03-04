@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all.sort_by!{|x| x.created_at }.reverse
+    @projects = Project.all.sort_by!{|x| x.updated_at }.reverse
   end
 
   # GET /projects/1
