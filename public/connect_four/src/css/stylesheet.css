@@ -1,0 +1,32 @@
+body {
+	text-align: center;
+	font-family: arial, sans-serif;
+}
+
+.col-1-7 {
+	width: 14.25%;
+	float: left;
+}
+
+.box {
+	width: 80%;
+	float: left;
+	height: 100px;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: gray;
+	opacity: 0.35;
+	border-radius: 100%;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#victory_image {
+	padding-top: 20px;
+	display: none;
+	margin: auto;
+}
+
+#refresh {
+	display: none;
+	margin: auto;
+}
