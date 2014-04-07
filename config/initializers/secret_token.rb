@@ -9,5 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-# Portfolio::Application.config.secret_key_base = ENV['RAILS_SECRET']
-Portfolio::Application.config.secret_key_base = '56bae8bcb05a487faddd1f4d1487e21a5c40d9bada06038bff0398f79b73d1eff64dd6c6e52db5fe06495d5c18d204737b81d696e4e4725b6daccda433425611'
+Portfolio::Application.config.secret_key_base = ENV['RAILS_SECRET']
