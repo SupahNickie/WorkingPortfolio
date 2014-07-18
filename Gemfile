@@ -25,7 +25,6 @@ group :development, :test do
   gem "faker"
   gem "launchy"
   gem 'letter_opener'
-  gem "minitest-rails"
   gem 'pry-rails'
   gem "turn"
 end
@@ -39,7 +38,7 @@ group :production do
 end
 
 group :test do
-  gem "minitest-focus"
-  gem "minitest-rails-capybara"
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
   gem 'simplecov', :require => false
 end

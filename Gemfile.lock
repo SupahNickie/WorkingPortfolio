@@ -98,8 +98,6 @@ GEM
       capybara (~> 2.1.0)
       minitest (~> 4.0)
       rake
-    minitest-focus (1.1.0)
-      minitest (>= 4, < 6)
     minitest-metadata (0.4.0)
       minitest (~> 4.7)
     minitest-rails (0.9.2)
@@ -220,7 +218,6 @@ DEPENDENCIES
   launchy
   letter_opener
   mime-types
-  minitest-focus
   minitest-rails
   minitest-rails-capybara
   paperclip
