@@ -13,13 +13,13 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        MessageMailer.send_message(@message).deliver
         format.html { redirect_to '/', notice: 'Your message was successfully sent!' }
         format.json { render action: 'show', status: :created, location: @message }
       else
         format.html { render action: 'new' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
-      MessageMailer.send_message(@message).deliver
     end
   end
 
