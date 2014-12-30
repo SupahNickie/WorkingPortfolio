@@ -1,0 +1,42 @@
+body {
+  font-family: arial;
+}
+
+#white_card {
+  visibility: hidden;
+  padding: 20px;
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+}
+
+button {
+  padding: 30px;
+}
+
+.card_select {
+  visibility: hidden;
+}
+
+#player_cards {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pass_around {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  visibility: hidden;
+}
+
+#pa_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 5%;
+}
+
+#score {
+  visibility: hidden;
+}
