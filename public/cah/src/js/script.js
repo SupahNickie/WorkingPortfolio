@@ -60,10 +60,10 @@ var stableWhiteCards = [
   "What helps Obama unwind?",
   "What did Vin Diesel eat for dinner?",
   "_________: good to the last drop.",
-  "What am I sticky?",
+  "Why am I sticky?",
   "What gets better with age?",
   "_________: kid-tested, mother-approved.",
-  "Daddy, why is Mommey crying?",
+  "Daddy, why is Mommy crying?",
   "What's Teach for America using to inspire inner city students to succeed?",
   "A recent lab study shows that undergrads have 50% less sex after being exposed to _________.",
   "Life for American Indians was forever changed when the White Man introduced them to _________.",
@@ -587,6 +587,12 @@ var game = {
     whiteCards = stableWhiteCards.slice()
     preNames = stableBlackCards.slice()
     blackCards = preNames.concat(playerNames.slice(1, players + 1))
+    shuffle(whiteCards)
+    shuffle(whiteCards)
+    shuffle(whiteCards)
+    shuffle(blackCards)
+    shuffle(blackCards)
+    shuffle(blackCards)
     playerCounter = 1
     while (playerCounter <= players) {
       drawCounter = 0
