@@ -602,13 +602,13 @@ var game = {
     string = ""
     for (i in playerNames) {
       if (i > 0) {
-        string = (string + playerNames[i] + ": " + playerScores[i] + ", ")
+        string = (string + playerNames[i] + ": " + playerScores[i] + "    ")
       }
     }
     $("#score").text(string)
   },
   updatePlayerName: function() {
-    $("#player_name").text("It's " + playerNames[guessingPlayer] + "'s turn!")
+    $("#player_name").text("It's " + playerNames[guessingPlayer] + "'s turn to pick the winning card.")
     $("#pass_around").css("visibility", "visible")
     $("#pass_around").text("Show " + playerNames[currentPlayer] + "'s cards")
   },
@@ -656,8 +656,8 @@ $(document).ready(function () {
       }
     }
   }),
-  $("#player_cards button").on("click", function() {
-      $("#player_cards button").css("visibility", "hidden")
+  $("#player_cards div").on("click", function() {
+      $("#player_cards div").css("visibility", "hidden")
     if (currentPlayer == guessingPlayer) {
       playerScores[gameArray[$(this).data("position")][0]]++
       if (Math.max.apply(Math, playerScores) == 10) {
