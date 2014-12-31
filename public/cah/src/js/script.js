@@ -666,6 +666,8 @@ $(document).ready(function () {
       $("#player_cards div").css("visibility", "hidden")
     if (currentPlayer == guessingPlayer) {
       playerScores[gameArray[$(this).data("position")][0]]++
+      $("#round_winner").text(playerNames[gameArray[$(this).data("position")][0]] + "'s card was chosen last round.")
+      $("#round_winner").css("visibility", "visible")
       if (Math.max.apply(Math, playerScores) == 10) {
         alert(playerNames[gameArray[$(this).data("position")][0]] + " has won!")
       }
