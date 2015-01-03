@@ -56,7 +56,7 @@ var stableWhiteCards = [
   "What's my secret power?",
   "What's there a ton of in Heaven?",
   "What would grandma find disturbing, yet oddly charming?",
-  "What did the US airdop to the children of Afghanistan?",
+  "What did the US airdrop to the children of Afghanistan?",
   "What helps Obama unwind?",
   "What did Vin Diesel eat for dinner?",
   "_________: good to the last drop.",
@@ -77,7 +77,7 @@ var stableWhiteCards = [
   "What's my anti-drug?",
   "What never fails to liven up the party?",
   "What's the new fad diet?",
-  "Fun tip! When you man asks you to go down on him, try surprising him with _________ instead."
+  "Fun tip! When your man asks you to go down on him, try surprising him with _________ instead."
 ]
 var stableBlackCards = [
   "Being on fire.",
@@ -263,7 +263,7 @@ var stableBlackCards = [
   "A foul mouth.",
   "Flightless birds.",
   "Doing the right thing.",
-  "When you far and a little shit comes out.",
+  "When you fart and a little shit comes out.",
   "Frolicking.",
   "Being a dick to children.",
   "Poopy diapers.",
