@@ -543,12 +543,14 @@ var stableBlackCards = [
 var playerBlacks = stablePlayerBlacks.slice()
 var playerNames = stablePlayerNames.slice()
 var playerScores = stablePlayerScores.slice()
+var playerDiscards = stablePlayerScores.slice()
 var whiteCards = []
 var blackCards = []
 var players = 0
 var guessingPlayer = 1
 var currentPlayer = 2
 var gameArray = []
+var discardCounter = 0
 
 var game = {
   assignPlayerNames: function() {
@@ -557,6 +559,18 @@ var game = {
       name = prompt("What is player " + counter + "'s name?")
       playerNames.push(name)
       counter++
+    }
+  },
+  discard: function() {
+    if ((playerDiscards[currentPlayer] < 3) && (discardCounter < 1)) {
+      playerBlacks[currentPlayer] = []
+      playerDiscards[currentPlayer]++
+      counter = 0
+      while (counter < 7) {
+        playerBlacks[currentPlayer].push(game.drawBlackCard())
+        counter++
+      }
+      discardCounter++
     }
   },
   drawBlackCard: function() {
@@ -582,6 +596,7 @@ var game = {
     gameArray = []
     game.updateWhiteCard()
     game.updateScores()
+    discardCounter = 0
   },
   initialDeal: function() {
     whiteCards = stableWhiteCards.slice()
@@ -590,6 +605,12 @@ var game = {
     shuffle(whiteCards)
     shuffle(whiteCards)
     shuffle(whiteCards)
+    shuffle(whiteCards)
+    shuffle(whiteCards)
+    shuffle(whiteCards)
+    shuffle(blackCards)
+    shuffle(blackCards)
+    shuffle(blackCards)
     shuffle(blackCards)
     shuffle(blackCards)
     shuffle(blackCards)
@@ -617,9 +638,21 @@ var game = {
     $("#player_name").text("It's " + playerNames[guessingPlayer] + "'s turn to pick the winning card.")
     $("#pass_around").css("visibility", "visible")
     $("#pass_around").text("Show " + playerNames[currentPlayer] + "'s cards")
+    if (playerDiscards[currentPlayer] < 3) {
+      $("#discard").text("Discards Remaining: " + (3 - playerDiscards[currentPlayer]))
+    } else {
+      $("#discard").css("visibility", "hidden")
+    }
   },
   updateWhiteCard: function() {
     $("#white_card").text(game.drawWhiteCard())
+  },
+  showDiscard: function() {
+    if ((discardCounter < 1) && (playerDiscards[currentPlayer] < 3)) {
+      $("#discard").css("visibility", "visible")
+    } else {
+      $("#discard").css("visibility", "hidden")
+    }
   },
   restart: function() {
     location.reload()
@@ -642,9 +675,11 @@ $(document).ready(function () {
     game.updateWhiteCard()
   }),
   $("#pass_around").on("click", function() {
+    game.showDiscard()
     $(this).css("visibility", "hidden")
     $(".card_select").css("visibility", "visible")
     if (currentPlayer == guessingPlayer) {
+      $("#discard").css("visibility", "hidden")
       card_counter = 0
       while (card_counter < gameArray.length) {
         $("#cs" + (card_counter + 1)).text(gameArray[card_counter][1])
@@ -663,7 +698,8 @@ $(document).ready(function () {
     }
   }),
   $("#player_cards div").on("click", function() {
-      $("#player_cards div").css("visibility", "hidden")
+    $("#discard").css("visibility", "hidden")
+    $("#player_cards div").css("visibility", "hidden")
     if (currentPlayer == guessingPlayer) {
       playerScores[gameArray[$(this).data("position")][0]]++
       $("#round_winner").text(playerNames[gameArray[$(this).data("position")][0]] + "'s card was chosen last round.")
@@ -688,6 +724,21 @@ $(document).ready(function () {
       }
       $("#pass_around").css("visibility", "visible")
     }
+  }),
+  $("#discard").on("click", function() {
+    $("#discard").css("visibility", "hidden")
+    $("#player_cards div").css("visibility", "hidden")
+    game.discard()
+    if (currentPlayer == players) {
+      currentPlayer = 1
+    } else {
+      currentPlayer++
+    }
+    game.updatePlayerName()
+    if (currentPlayer == guessingPlayer) {
+      $("#pass_around").text("Decide the winner!")
+    }
+    $("#pass_around").css("visibility", "visible")
   }),
   $("#restart").on("click", function() {
     game.restart()

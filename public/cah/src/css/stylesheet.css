@@ -7,12 +7,18 @@ h3 {
   margin: 5px;
 }
 
-#restart {
+#game_controls {
+  float: right;
+}
+
+#discard {
+  visibility: hidden;
+}
+
+#game_controls div {
+  padding: 10px;
   cursor: pointer;
   font-size: 0.8em;
-  float: right;
-  width: 10%;
-  padding: 10px;
   display: inline-block;
   border: 2px solid black;
   text-align: center;
