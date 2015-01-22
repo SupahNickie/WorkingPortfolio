@@ -2,9 +2,9 @@ Portfolio::Application.routes.draw do
 
   resources :messages, only: [:new, :create]
 
-  resources :blogs do
-    resources :photos
-  end
+  # resources :blogs do
+  #   resources :photos
+  # end
 
   resources :projects do
     resources :photos
